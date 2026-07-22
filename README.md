@@ -6,8 +6,13 @@
 
 ```bash
 pip install wand tinify
-brew install imagemagick
 ```
+
+ImageMagick 也需安装：
+
+- **macOS**: `brew install imagemagick`
+- **Windows**: [下载安装包](https://imagemagick.org/script/download.php#windows)
+- **Linux**: `sudo apt install imagemagick`
 
 ## 配置
 

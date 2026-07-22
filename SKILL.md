@@ -24,9 +24,9 @@ pip install wand tinify
 
 需要 ImageMagick：
 
-```bash
-brew install imagemagick
-```
+- **macOS**: `brew install imagemagick`
+- **Windows**: [下载安装包](https://imagemagick.org/script/download.php#windows)
+- **Linux**: `sudo apt install imagemagick`
 
 ### Configuration
 

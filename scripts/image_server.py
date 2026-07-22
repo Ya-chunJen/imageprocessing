@@ -32,11 +32,23 @@ def _outpath(image_path: str, add_str: str, target_format: str = "") -> str:
     return f"{image_dir}/{image_name}-{add_str}{image_path_obj.suffix}"
 
 
+import sys
+import subprocess
+
+
 def _show_image(image_path: str, open_app: str = "default"):
-    if open_app == "default":
-        os.system(f"open '{image_path}'")
+    if sys.platform == "darwin":
+        if open_app == "default":
+            subprocess.run(["open", image_path])
+        else:
+            subprocess.run(["open", "-a", open_app, image_path])
+    elif sys.platform == "win32":
+        os.startfile(image_path)
     else:
-        os.system(f"open -a '{open_app}' '{image_path}'")
+        if open_app == "default":
+            subprocess.run(["xdg-open", image_path])
+        else:
+            subprocess.run([open_app, image_path])
 
 
 # ── 图片处理函数 ─────────────────────────────────────────────────────────
